@@ -22,7 +22,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+# require the library (not necessary if using bundler)
+require 'DurTool'
+
+# optional: used to parse strings such as "one week from now" into datetime objects.
+require 'chronic' 
+
+now = Chronic.parse('right now') # => 2017-10-14 18:51:12 -0700
+countdown_to = Chronic.parse('Wednesday at 10pm') # => 2017-10-18 22:00:00 -0700
+
+duration = countdown_to - now # => 356927.132388
+
+formatted_duration = DurTool.format(duration) # => "99h 8m 47s"
+```
 
 ## Development
 
